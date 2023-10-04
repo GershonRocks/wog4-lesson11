@@ -2,6 +2,7 @@ import currency_roulette_game
 import guess_game
 import memory_game
 
+from score import add_score
 
 def welcome():
     username = input("Enter your name: ")
@@ -42,6 +43,7 @@ def start_play():
 def play_game_executor(game, difficulty):
     if game.play(difficulty):
         print("You Win")
+        add_score(difficulty)
     else:
         print("You Lose")
 
