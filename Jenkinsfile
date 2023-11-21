@@ -34,8 +34,12 @@ pipeline {
         stage('Run e2e Tests') {
             steps {
                 script {
-                    sh 'pip install -i requirements.txt'
-                    sh 'python3 e2e.py'
+                    sh '''
+                    python -m venv venv
+                    source venv/bin/activate
+                    pip install -r requirements.txt
+                    python3 e2e.py
+                    '''
                 }
             }
         }
