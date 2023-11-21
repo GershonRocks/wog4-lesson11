@@ -52,6 +52,5 @@ Contributions, issues, and feature requests are welcome! Feel free to check [iss
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
-
-Your Name - Gershon Avital
+Gershon Avital - [@GershonRocks](https://twitter.com/GershonRocks) - info@tgx-group.com
 Project Link: [https://github.com/LiorRocks/wog4-lesson11](https://github.com/LiorRocks/wog4-lesson11)
