@@ -1,0 +1,8 @@
+version: '3'
+services:
+  your_service:
+    image: gtdreams/wog4:v1.0
+    ports:
+      - "30000:30000"
+    volumes:
+      - ./Scores.txt:/app/Scores.txt
