@@ -34,6 +34,7 @@ pipeline {
         stage('Run e2e Tests') {
             steps {
                 script {
+                    sh 'pip install -i requirements.txt'
                     sh 'python3 e2e.py'
                 }
             }
