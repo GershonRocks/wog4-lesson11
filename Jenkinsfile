@@ -26,7 +26,6 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh "ls -l"
                     sh "docker-compose up -d"
                 }
             }
