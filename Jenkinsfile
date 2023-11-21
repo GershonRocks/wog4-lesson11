@@ -18,7 +18,7 @@ pipeline {
         stage('Update Docker Compose') {
             steps {
                 script {
-                    sh "sed -i 's|gtdreams/wog4:v1.0|${IMAGE_NAME}:${NEW_TAG}|g' docker-compose.yml"
+                    sh "sed -i 's|gtdreams/wog4:v1.0|${IMAGE_NAME}:${env.BUILD_ID}|g' docker-compose.yml"
                 }
             }
         }
