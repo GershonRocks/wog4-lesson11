@@ -35,10 +35,14 @@ def identify_system():
 
 def detect_arch_webdriver():
     system_info = identify_system()
-    options = Options()
-    options.headless = True
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
+
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--window-size=1920,1080")
+
     if system_info == 'MacOS arm64':
         return webdriver.Chrome(service=Service('./selenium/chromedriver-mac-arm64/chromedriver'), options=options)
     elif system_info == 'MacOS amd64':
