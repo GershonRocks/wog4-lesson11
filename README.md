@@ -41,7 +41,7 @@ python3 main_score.py
 ## Docker Usage
 
 - Build the Docker image: `docker build -t wog4-lesson11 .`
-- Run the Docker container: `docker run -p 3000:3000 wog4-lesson11`
+- Run the Docker container: `docker run -p 3000:3000 -v:./Scores.txt:/app/Scores.txt wog4-lesson11`
 
 ## Contributing
 
