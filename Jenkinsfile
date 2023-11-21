@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    python -m venv venv
+                    python3 -m venv venv
                     source venv/bin/activate
                     pip install -r requirements.txt
                     python3 e2e.py
