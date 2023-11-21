@@ -1,2 +1,3 @@
 flask
 CurrencyConverter
+selenium==4.15.2
