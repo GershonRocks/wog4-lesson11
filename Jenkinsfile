@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "gtdreams/wog4"
-        CONTAINER_NAME = "wog4-lesson11_your_service_1"
+        CONTAINER_NAME = "wog4-lesson11_wog4_service_1"
     }
 
     stages {
