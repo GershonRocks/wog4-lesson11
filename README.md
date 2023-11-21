@@ -9,3 +9,6 @@
 # What's new?
 * Added e2e.py for testing
 * Added selenium dependency for testing in e2e
+* Added Jenkins file for a Jenkins pipeline
+* Added Dockerfile for creating docker image of solution
+* Push docker image into docker hub
