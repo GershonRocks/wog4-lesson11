@@ -3,6 +3,8 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+from selenium.webdriver.chrome.options import Options
+
 def identify_system():
     os_name = platform.system()
     architecture = platform.machine()
@@ -33,13 +35,17 @@ def identify_system():
 
 def detect_arch_webdriver():
     system_info = identify_system()
+    options = Options()
+    options.headless = True
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
     if system_info == 'MacOS arm64':
-        return webdriver.Chrome(service=Service('./selenium/chromedriver-mac-arm64/chromedriver'))
+        return webdriver.Chrome(service=Service('./selenium/chromedriver-mac-arm64/chromedriver'), options=options)
     elif system_info == 'MacOS amd64':
-        return webdriver.Chrome(service=Service('./selenium/chromedriver-mac-x64/chromedriver'))
+        return webdriver.Chrome(service=Service('./selenium/chromedriver-mac-x64/chromedriver'), options=options)
     elif system_info == 'Windows amd64':
-        return webdriver.Chrome(service=Service('./selenium/chromedriver-win64/chromedriver.exe'))
+        return webdriver.Chrome(service=Service('./selenium/chromedriver-win64/chromedriver.exe'), options=options)
     elif system_info == 'Linux amd64':
-        return webdriver.Chrome(service=Service('./selenium/chromedriver-linux64/chromedriver'))
+        return webdriver.Chrome(service=Service('./selenium/chromedriver-linux64/chromedriver'), options=options)
 
     raise RuntimeError("Could not detect OS")
